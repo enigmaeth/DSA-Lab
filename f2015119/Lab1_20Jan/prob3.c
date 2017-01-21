@@ -24,6 +24,9 @@ int main()
 	int fib[n];
 	char res[n];
 	char ans[n];
+	memset(ans, 0 ,n);
+	memset(res, 0 ,n);
+	memset(fib, 0 ,n);
 	for(i=0;i<n;i++)
 		scanf("%d",&(fib[i]));
 	scanf("%s",res);
