@@ -1,0 +1,756 @@
+user@ipc491-ThinkCentre-M58e:~$ sqlplus system/manager
+
+SQL*Plus: Release 10.2.0.1.0 - Production on Thu Mar 2 15:03:51 2017
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+
+SQL> select * from tab
+  2  ;
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+SYSCATALOG		       SYNONYM
+CATALOG 		       SYNONYM
+TAB			       SYNONYM
+COL			       SYNONYM
+TABQUOTAS		       SYNONYM
+SYSFILES		       SYNONYM
+PUBLICSYN		       SYNONYM
+MVIEW$_ADV_WORKLOAD	       TABLE
+MVIEW$_ADV_BASETABLE	       TABLE
+MVIEW$_ADV_SQLDEPEND	       TABLE
+MVIEW$_ADV_PRETTY	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+MVIEW$_ADV_TEMP 	       TABLE
+MVIEW$_ADV_FILTER	       TABLE
+MVIEW$_ADV_LOG		       TABLE
+MVIEW$_ADV_FILTERINSTANCE      TABLE
+MVIEW$_ADV_LEVEL	       TABLE
+MVIEW$_ADV_ROLLUP	       TABLE
+MVIEW$_ADV_AJG		       TABLE
+MVIEW$_ADV_FJG		       TABLE
+MVIEW$_ADV_GC		       TABLE
+MVIEW$_ADV_CLIQUE	       TABLE
+MVIEW$_ADV_ELIGIBLE	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+MVIEW$_ADV_OUTPUT	       TABLE
+MVIEW$_ADV_EXCEPTIONS	       TABLE
+MVIEW$_ADV_PARAMETERS	       TABLE
+MVIEW$_ADV_INFO 	       TABLE
+MVIEW$_ADV_JOURNAL	       TABLE
+MVIEW$_ADV_PLAN 	       TABLE
+MVIEW_WORKLOAD		       VIEW
+MVIEW_FILTER		       VIEW
+MVIEW_LOG		       VIEW
+MVIEW_FILTERINSTANCE	       VIEW
+MVIEW_RECOMMENDATIONS	       VIEW
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+MVIEW_EVALUATIONS	       VIEW
+MVIEW_EXCEPTIONS	       VIEW
+AQ$_QUEUE_TABLES	       TABLE
+AQ$_QUEUES		       TABLE
+AQ$_SCHEDULES		       TABLE
+AQ$_INTERNET_AGENTS	       TABLE
+AQ$_INTERNET_AGENT_PRIVS       TABLE
+DEF$_AQCALL		       TABLE
+DEF$_AQERROR		       TABLE
+AQ$_DEF$_AQCALL_F	       VIEW
+AQ$DEF$_AQCALL		       VIEW
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+DEF$_ERROR		       TABLE
+AQ$_DEF$_AQERROR_F	       VIEW
+AQ$DEF$_AQERROR 	       VIEW
+DEF$_DESTINATION	       TABLE
+DEF$_CALLDEST		       TABLE
+DEF$_DEFAULTDEST	       TABLE
+DEF$_LOB		       TABLE
+DEF$_TEMP$LOB		       TABLE
+DEF$_PROPAGATOR 	       TABLE
+DEF$_ORIGIN		       TABLE
+DEF$_PUSHED_TRANSACTIONS       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+OL$			       TABLE
+OL$HINTS		       TABLE
+OL$NODES		       TABLE
+LOGMNR_SESSION_EVOLVE$	       TABLE
+LOGMNR_HEADER1$ 	       TABLE
+LOGMNR_HEADER2$ 	       TABLE
+LOGMNR_UID$		       TABLE
+LOGMNRC_DBNAME_UID_MAP	       TABLE
+LOGMNR_DICTSTATE$	       TABLE
+LOGMNR_DICTIONARY$	       TABLE
+LOGMNR_OBJ$		       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_USER$		       TABLE
+LOGMNRC_GTLO		       TABLE
+LOGMNRC_GTCS		       TABLE
+LOGMNRC_GSII		       TABLE
+LOGMNR_TAB$		       TABLE
+LOGMNR_COL$		       TABLE
+LOGMNR_ATTRCOL$ 	       TABLE
+LOGMNR_TS$		       TABLE
+LOGMNR_IND$		       TABLE
+LOGMNR_TABPART$ 	       TABLE
+LOGMNR_TABSUBPART$	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_TABCOMPART$	       TABLE
+LOGMNR_TYPE$		       TABLE
+LOGMNR_COLTYPE$ 	       TABLE
+LOGMNR_ATTRIBUTE$	       TABLE
+LOGMNR_LOB$		       TABLE
+LOGMNR_CDEF$		       TABLE
+LOGMNR_CCOL$		       TABLE
+LOGMNR_ICOL$		       TABLE
+LOGMNR_LOBFRAG$ 	       TABLE
+LOGMNR_INDPART$ 	       TABLE
+LOGMNR_INDSUBPART$	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_INDCOMPART$	       TABLE
+LOGMNRP_CTAS_PART_MAP	       TABLE
+LOGMNRT_MDDL$		       TABLE
+LOGMNR_LOG$		       TABLE
+LOGMNR_PROCESSED_LOG$	       TABLE
+LOGMNR_SPILL$		       TABLE
+LOGMNR_AGE_SPILL$	       TABLE
+LOGMNR_RESTART_CKPT_TXINFO$    TABLE
+LOGMNR_ERROR$		       TABLE
+LOGMNR_RESTART_CKPT$	       TABLE
+LOGMNR_FILTER$		       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_PARAMETER$	       TABLE
+LOGMNR_SESSION$ 	       TABLE
+LOGSTDBY$PARAMETERS	       TABLE
+LOGSTDBY$EVENTS 	       TABLE
+LOGSTDBY$APPLY_PROGRESS        TABLE
+LOGSTDBY$APPLY_MILESTONE       TABLE
+LOGSTDBY$SCN		       TABLE
+LOGSTDBY$PLSQL		       TABLE
+LOGSTDBY$SKIP_TRANSACTION      TABLE
+LOGSTDBY$SKIP		       TABLE
+LOGSTDBY$SKIP_SUPPORT	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+LOGSTDBY$HISTORY	       TABLE
+REPCAT$_REPCAT		       TABLE
+REPCAT$_FLAVORS 	       TABLE
+REPCAT$_REPSCHEMA	       TABLE
+REPCAT$_SNAPGROUP	       TABLE
+REPCAT$_REPOBJECT	       TABLE
+REPCAT$_REPCOLUMN	       TABLE
+REPCAT$_KEY_COLUMNS	       TABLE
+REPCAT$_GENERATED	       TABLE
+REPCAT$_REPPROP 	       TABLE
+REPCAT$_REPCATLOG	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+REPCAT$_DDL		       TABLE
+REPCAT$_REPGROUP_PRIVS	       TABLE
+REPCAT$_PRIORITY_GROUP	       TABLE
+REPCAT$_PRIORITY	       TABLE
+REPCAT$_COLUMN_GROUP	       TABLE
+REPCAT$_GROUPED_COLUMN	       TABLE
+REPCAT$_CONFLICT	       TABLE
+REPCAT$_RESOLUTION_METHOD      TABLE
+REPCAT$_RESOLUTION	       TABLE
+REPCAT$_RESOLUTION_STATISTICS  TABLE
+REPCAT$_RESOL_STATS_CONTROL    TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+REPCAT$_PARAMETER_COLUMN       TABLE
+REPCAT$_AUDIT_ATTRIBUTE        TABLE
+REPCAT$_AUDIT_COLUMN	       TABLE
+REPCAT$_FLAVOR_OBJECTS	       TABLE
+REPCAT$_TEMPLATE_STATUS        TABLE
+REPCAT$_TEMPLATE_TYPES	       TABLE
+REPCAT$_REFRESH_TEMPLATES      TABLE
+REPCAT$_USER_AUTHORIZATIONS    TABLE
+REPCAT$_OBJECT_TYPES	       TABLE
+REPCAT$_TEMPLATE_REFGROUPS     TABLE
+REPCAT$_TEMPLATE_OBJECTS       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+REPCAT$_TEMPLATE_PARMS	       TABLE
+REPCAT$_OBJECT_PARMS	       TABLE
+REPCAT$_USER_PARM_VALUES       TABLE
+REPCAT$_TEMPLATE_SITES	       TABLE
+REPCAT$_SITE_OBJECTS	       TABLE
+REPCAT$_RUNTIME_PARMS	       TABLE
+REPCAT$_TEMPLATE_TARGETS       TABLE
+REPCAT$_EXCEPTIONS	       TABLE
+REPCAT$_INSTANTIATION_DDL      TABLE
+REPCAT$_EXTENSION	       TABLE
+REPCAT$_SITES_NEW	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+STUDENT_DEPT		       VIEW
+SQLPLUS_PRODUCT_PROFILE        TABLE
+PRODUCT_PRIVS		       VIEW
+PRODUCT_USER_PROFILE	       SYNONYM
+HELP			       TABLE
+STUDENT 		       TABLE
+STUD_967		       TABLE
+CUSTOMERS_076		       TABLE
+DATA_076		       TABLE
+DEPT_170		       TABLE
+STUDENT_170		       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+PROJECT_170		       TABLE
+STUDENT_PROJECT_170	       TABLE
+DEPT_145		       TABLE
+STD_145 		       TABLE
+
+169 rows selected.
+
+SQL> desc project_170
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PNUM						    NUMBER(38)
+ PNAME						    VARCHAR2(10)
+ PLOC						    VARCHAR2(10)
+
+SQL> select * from tab 
+  2  ^C
+
+SQL> select * from project_170
+  2  ;
+
+      PNUM PNAME      PLOC
+---------- ---------- ----------
+	 1 BIGDATA    HYDERABAD
+	 2 SENSORS    CHENNAI
+	 3 CLOUD      DELHI
+	 4 WEB	      CHENNAI
+
+SQL> create table STUDENT_PROJECT_119(
+  2      
+SQL> Create table PROJECT_119(
+  2  pnum int primary key,
+  3  pname varchar(10),
+  4  ploc varchar(10)
+  5  ); 
+
+Table created.
+
+SQL> create table STUDENT_PROJECT_119(
+  2  sno int,
+  3  pno int,
+  4  hrs int,
+  5  sno references STD_145(sid),
+  6  pno references PROJECT_119(pnum)   
+  7  );
+sno references STD_145(sid),
+*
+ERROR at line 5:
+ORA-00957: duplicate column name
+
+
+SQL> ^C
+
+SQL> create table STUDENT_PROJECT_119(    hrs int,    sno int references STD_145(sid),    pno int references PROJECT_119(pnum)     );
+
+Table created.
+
+SQL> select * from DEPT_!$%
+  2  
+SQL> select * from DEPT_145
+  2  ;
+
+       DNO DNAME		LOC	   HOD			      YEAR
+---------- -------------------- ---------- -------------------- ----------
+	10 cse			krishna    Block-B		      2008
+	20 eee			chandra    Block-B		      2010
+	30 math 		james	   Block-A		      2009
+	40 phy			agarwal    Block-C		      2009
+
+SQL> select * from STD_145
+  2  ;
+
+       SID SNAME		      SAGE SDATE	    DNO
+---------- -------------------- ---------- --------- ----------
+       101 Kiran			20 04-JAN-13	     20
+       102 Mohan			21 20-JAN-13	     10
+       105 John 			21 01-AUG-12	     10
+       108 Gopal			22 19-AUG-13	     20
+       109 Abdul			20 14-JAN-13	     10
+       110 Narmada			21 10-AUG-11	     30
+       114 Murali			23 14-JAN-10	     10
+
+7 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select tab from *
+  2  ;
+select tab from *
+                *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> select * from tab;
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+SYSCATALOG		       SYNONYM
+CATALOG 		       SYNONYM
+TAB			       SYNONYM
+COL			       SYNONYM
+TABQUOTAS		       SYNONYM
+SYSFILES		       SYNONYM
+PUBLICSYN		       SYNONYM
+MVIEW$_ADV_WORKLOAD	       TABLE
+MVIEW$_ADV_BASETABLE	       TABLE
+MVIEW$_ADV_SQLDEPEND	       TABLE
+MVIEW$_ADV_PRETTY	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+MVIEW$_ADV_TEMP 	       TABLE
+MVIEW$_ADV_FILTER	       TABLE
+MVIEW$_ADV_LOG		       TABLE
+MVIEW$_ADV_FILTERINSTANCE      TABLE
+MVIEW$_ADV_LEVEL	       TABLE
+MVIEW$_ADV_ROLLUP	       TABLE
+MVIEW$_ADV_AJG		       TABLE
+MVIEW$_ADV_FJG		       TABLE
+MVIEW$_ADV_GC		       TABLE
+MVIEW$_ADV_CLIQUE	       TABLE
+MVIEW$_ADV_ELIGIBLE	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+MVIEW$_ADV_OUTPUT	       TABLE
+MVIEW$_ADV_EXCEPTIONS	       TABLE
+MVIEW$_ADV_PARAMETERS	       TABLE
+MVIEW$_ADV_INFO 	       TABLE
+MVIEW$_ADV_JOURNAL	       TABLE
+MVIEW$_ADV_PLAN 	       TABLE
+MVIEW_WORKLOAD		       VIEW
+MVIEW_FILTER		       VIEW
+MVIEW_LOG		       VIEW
+MVIEW_FILTERINSTANCE	       VIEW
+MVIEW_RECOMMENDATIONS	       VIEW
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+MVIEW_EVALUATIONS	       VIEW
+MVIEW_EXCEPTIONS	       VIEW
+AQ$_QUEUE_TABLES	       TABLE
+AQ$_QUEUES		       TABLE
+AQ$_SCHEDULES		       TABLE
+AQ$_INTERNET_AGENTS	       TABLE
+AQ$_INTERNET_AGENT_PRIVS       TABLE
+DEF$_AQCALL		       TABLE
+DEF$_AQERROR		       TABLE
+AQ$_DEF$_AQCALL_F	       VIEW
+AQ$DEF$_AQCALL		       VIEW
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+DEF$_ERROR		       TABLE
+AQ$_DEF$_AQERROR_F	       VIEW
+AQ$DEF$_AQERROR 	       VIEW
+DEF$_DESTINATION	       TABLE
+DEF$_CALLDEST		       TABLE
+DEF$_DEFAULTDEST	       TABLE
+DEF$_LOB		       TABLE
+DEF$_TEMP$LOB		       TABLE
+DEF$_PROPAGATOR 	       TABLE
+DEF$_ORIGIN		       TABLE
+DEF$_PUSHED_TRANSACTIONS       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+OL$			       TABLE
+OL$HINTS		       TABLE
+OL$NODES		       TABLE
+LOGMNR_SESSION_EVOLVE$	       TABLE
+LOGMNR_HEADER1$ 	       TABLE
+LOGMNR_HEADER2$ 	       TABLE
+LOGMNR_UID$		       TABLE
+LOGMNRC_DBNAME_UID_MAP	       TABLE
+LOGMNR_DICTSTATE$	       TABLE
+LOGMNR_DICTIONARY$	       TABLE
+LOGMNR_OBJ$		       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_USER$		       TABLE
+LOGMNRC_GTLO		       TABLE
+LOGMNRC_GTCS		       TABLE
+LOGMNRC_GSII		       TABLE
+LOGMNR_TAB$		       TABLE
+LOGMNR_COL$		       TABLE
+LOGMNR_ATTRCOL$ 	       TABLE
+LOGMNR_TS$		       TABLE
+LOGMNR_IND$		       TABLE
+LOGMNR_TABPART$ 	       TABLE
+LOGMNR_TABSUBPART$	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_TABCOMPART$	       TABLE
+LOGMNR_TYPE$		       TABLE
+LOGMNR_COLTYPE$ 	       TABLE
+LOGMNR_ATTRIBUTE$	       TABLE
+LOGMNR_LOB$		       TABLE
+LOGMNR_CDEF$		       TABLE
+LOGMNR_CCOL$		       TABLE
+LOGMNR_ICOL$		       TABLE
+LOGMNR_LOBFRAG$ 	       TABLE
+LOGMNR_INDPART$ 	       TABLE
+LOGMNR_INDSUBPART$	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_INDCOMPART$	       TABLE
+LOGMNRP_CTAS_PART_MAP	       TABLE
+LOGMNRT_MDDL$		       TABLE
+LOGMNR_LOG$		       TABLE
+LOGMNR_PROCESSED_LOG$	       TABLE
+LOGMNR_SPILL$		       TABLE
+LOGMNR_AGE_SPILL$	       TABLE
+LOGMNR_RESTART_CKPT_TXINFO$    TABLE
+LOGMNR_ERROR$		       TABLE
+LOGMNR_RESTART_CKPT$	       TABLE
+LOGMNR_FILTER$		       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+LOGMNR_PARAMETER$	       TABLE
+LOGMNR_SESSION$ 	       TABLE
+LOGSTDBY$PARAMETERS	       TABLE
+LOGSTDBY$EVENTS 	       TABLE
+LOGSTDBY$APPLY_PROGRESS        TABLE
+LOGSTDBY$APPLY_MILESTONE       TABLE
+LOGSTDBY$SCN		       TABLE
+LOGSTDBY$PLSQL		       TABLE
+LOGSTDBY$SKIP_TRANSACTION      TABLE
+LOGSTDBY$SKIP		       TABLE
+LOGSTDBY$SKIP_SUPPORT	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+LOGSTDBY$HISTORY	       TABLE
+REPCAT$_REPCAT		       TABLE
+REPCAT$_FLAVORS 	       TABLE
+REPCAT$_REPSCHEMA	       TABLE
+REPCAT$_SNAPGROUP	       TABLE
+REPCAT$_REPOBJECT	       TABLE
+REPCAT$_REPCOLUMN	       TABLE
+REPCAT$_KEY_COLUMNS	       TABLE
+REPCAT$_GENERATED	       TABLE
+REPCAT$_REPPROP 	       TABLE
+REPCAT$_REPCATLOG	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+REPCAT$_DDL		       TABLE
+REPCAT$_REPGROUP_PRIVS	       TABLE
+REPCAT$_PRIORITY_GROUP	       TABLE
+REPCAT$_PRIORITY	       TABLE
+REPCAT$_COLUMN_GROUP	       TABLE
+REPCAT$_GROUPED_COLUMN	       TABLE
+REPCAT$_CONFLICT	       TABLE
+REPCAT$_RESOLUTION_METHOD      TABLE
+REPCAT$_RESOLUTION	       TABLE
+REPCAT$_RESOLUTION_STATISTICS  TABLE
+REPCAT$_RESOL_STATS_CONTROL    TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+REPCAT$_PARAMETER_COLUMN       TABLE
+REPCAT$_AUDIT_ATTRIBUTE        TABLE
+REPCAT$_AUDIT_COLUMN	       TABLE
+REPCAT$_FLAVOR_OBJECTS	       TABLE
+REPCAT$_TEMPLATE_STATUS        TABLE
+REPCAT$_TEMPLATE_TYPES	       TABLE
+REPCAT$_REFRESH_TEMPLATES      TABLE
+REPCAT$_USER_AUTHORIZATIONS    TABLE
+REPCAT$_OBJECT_TYPES	       TABLE
+REPCAT$_TEMPLATE_REFGROUPS     TABLE
+REPCAT$_TEMPLATE_OBJECTS       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+REPCAT$_TEMPLATE_PARMS	       TABLE
+REPCAT$_OBJECT_PARMS	       TABLE
+REPCAT$_USER_PARM_VALUES       TABLE
+REPCAT$_TEMPLATE_SITES	       TABLE
+REPCAT$_SITE_OBJECTS	       TABLE
+REPCAT$_RUNTIME_PARMS	       TABLE
+REPCAT$_TEMPLATE_TARGETS       TABLE
+REPCAT$_EXCEPTIONS	       TABLE
+REPCAT$_INSTANTIATION_DDL      TABLE
+REPCAT$_EXTENSION	       TABLE
+REPCAT$_SITES_NEW	       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+PROJECT_119		       TABLE
+STUDENT_PROJECT_119	       TABLE
+STUDENT_DEPT		       VIEW
+SQLPLUS_PRODUCT_PROFILE        TABLE
+PRODUCT_PRIVS		       VIEW
+PRODUCT_USER_PROFILE	       SYNONYM
+HELP			       TABLE
+STUDENT 		       TABLE
+STUD_967		       TABLE
+CUSTOMERS_076		       TABLE
+DATA_076		       TABLE
+
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+DEPT_170		       TABLE
+STUDENT_170		       TABLE
+PROJECT_170		       TABLE
+STUDENT_PROJECT_170	       TABLE
+DEPT_145		       TABLE
+STD_145 		       TABLE
+
+171 rows selected.
+
+SQL> select * from STUDENT_PROJECT_170
+  2  ;
+
+       SNO	  PNO	     HRS
+---------- ---------- ----------
+       101	    2	       3
+       105	    2	       4
+       105	    4	       5
+       109	    1	       7
+       109	    2	       2
+       109	    3	       4
+       109	    4	       9
+       114	    1	      11
+       118	    1	       6
+       118	    2	       2
+
+10 rows selected.
+
+SQL> desc Student_project_170
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNO					   NOT NULL NUMBER(38)
+ PNO					   NOT NULL NUMBER(38)
+ HRS						    NUMBER(38)
+
+SQL> desc PROJECT_170
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PNUM						    NUMBER(38)
+ PNAME						    VARCHAR2(10)
+ PLOC						    VARCHAR2(10)
+
+SQL> select * from PROJECT_170	
+  2  ;
+
+      PNUM PNAME      PLOC
+---------- ---------- ----------
+	 1 BIGDATA    HYDERABAD
+	 2 SENSORS    CHENNAI
+	 3 CLOUD      DELHI
+	 4 WEB	      CHENNAI
+
+SQL> select * from PROJECT_170 group by ploc;
+select * from PROJECT_170 group by ploc
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> commit;              
+
+Commit complete.
+
+SQL> select sid,sname from student_170 where sid in (select sno from student_project_170 where student_170.sid=student_project_170.sno);
+
+       SID SNAME
+---------- --------------------
+       118 KOMAL
+       101 KIRAN
+       105 JOHN
+
+SQL> select * from student_170
+  2  ;
+
+       SID SNAME		      SAGE JDATE	    DNO
+---------- -------------------- ---------- --------- ----------
+       118 KOMAL			21 16-AUG-11	     30
+       101 KIRAN			20 04-JAN-13	     20
+       105 JOHN 			21 01-AUG-12	     10
+       108 GOKUL			22 19-AUG-13	     20
+
+SQL> insert into student_170 values (109, "NYMERIA" , 20 , "17-AUG-11" , 20);
+insert into student_170 values (109, "NYMERIA" , 20 , "17-AUG-11" , 20)
+                                                      *
+ERROR at line 1:
+ORA-00984: column not allowed here
+
+
+SQL> insert into student_170 values (109, "NYMERIA" , 20 , '17-AUG-11', 20);     
+insert into student_170 values (109, "NYMERIA" , 20 , '17-AUG-11', 20)
+                                     *
+ERROR at line 1:
+ORA-00984: column not allowed here
+
+
+SQL> insert into student_170 values (109, "NYMERIA" , 20 , "17-AUG-11" , 20);
+insert into student_170 values (109, "NYMERIA" , 20 , "17-AUG-11" , 20)
+                                                      *
+ERROR at line 1:
+ORA-00984: column not allowed here
+
+
+SQL> insert into student_170 values (109, 'NYMERIA' , 20 , '17-AUG-11' , 20);
+
+1 row created.
+
+SQL> insert into student_170 values (109, 'NYMERIA' , 20 , '17-AUG-11' , 20);^[[B^[[A^[[A^[[A
+  2  
+SQL> insert into student_170 values (114, 'PABLO' , 22 , '13-JAN-11' , 30);
+
+1 row created.
+
+SQL> ^C
+
+SQL> select sid,sname from student_170 where exists (select sno from student_project_170 where student_170.sid=student_project_170.sno);
+
+       SID SNAME
+---------- --------------------
+       118 KOMAL
+       101 KIRAN
+       105 JOHN
+       109 NYMERIA
+       114 PABLO
+
+SQL> select sid,sname from student_170 where not exists (select sno from student_project_170 where student_170.sid=student_project_170.sno);
+
+       SID SNAME
+---------- --------------------
+       108 GOKUL
+
+SQL> 
+SQL> select sid,sname from student_170 where sid not in (select sno from student_project_170 where student_170.sid=student_project_170.sno);
+
+       SID SNAME
+---------- --------------------
+       108 GOKUL
+
+SQL> select sid,sname from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno;
+
+       SID SNAME
+---------- --------------------
+       101 KIRAN
+       105 JOHN
+       105 JOHN
+       109 NYMERIA
+       109 NYMERIA
+       109 NYMERIA
+       109 NYMERIA
+       114 PABLO
+       118 KOMAL
+       118 KOMAL
+
+10 rows selected.
+
+SQL> select sid,sname,count(pno) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno group by pno ;
+select sid,sname,count(pno) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno group by pno
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> select sid,sname,count(pno) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno group by student_project_170.pno ;
+select sid,sname,count(pno) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno group by student_project_170.pno
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> select sid,sname,count(pno) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno ;
+select sid,sname,count(pno) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> select (distinct)sid,sname from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno ;
+select (distinct)sid,sname from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno
+        *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> select distinct sid,sname from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno ;
+
+       SID SNAME
+---------- --------------------
+       114 PABLO
+       101 KIRAN
+       105 JOHN
+       118 KOMAL
+       109 NYMERIA
+
+SQL> select distinct sid,sname from student_170 (student_170 minus inner join student_project_170 on student_170.sid = student_project_170.sno );
+select distinct sid,sname from student_170 (student_170 minus inner join student_project_170 on student_170.sid = student_project_170.sno )
+                                           *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select distinct sid,sname from (student_170 minus inner join student_project_170 on student_170.sid = student_project_170.sno );
+select distinct sid,sname from (student_170 minus inner join student_project_170 on student_170.sid = student_project_170.sno )
+                                            *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> select distinct sid,sname from student_170 minus inner join student_project_170 on student_170.sid = student_project_170.sno;
+select distinct sid,sname from student_170 minus inner join student_project_170 on student_170.sid = student_project_170.sno
+                                                 *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> select distinct sid,sname from student_170 minus select distinct sid,sname from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno ;
+
+       SID SNAME
+---------- --------------------
+       108 GOKUL
+
+SQL> ^C
+
+SQL>   
+
