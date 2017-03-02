@@ -752,5 +752,180 @@ SQL> select distinct sid,sname from student_170 minus select distinct sid,sname 
 
 SQL> ^C
 
-SQL>   
+SQL> select sid,sname from student_170 where sage >= avg(sage);
+select sid,sname from student_170 where sage >= avg(sage)
+                                                *
+ERROR at line 1:
+ORA-00934: group function is not allowed here
 
+
+SQL> select avg(sage) from student_170;
+
+ AVG(SAGE)
+----------
+	21
+
+SQL> select sid,sname from student_170 where sage >= (select avg(sage) from student_170);
+
+       SID SNAME
+---------- --------------------
+       118 KOMAL
+       105 JOHN
+       108 GOKUL
+       114 PABLO
+
+SQL> select count(sage) from student_170;
+
+COUNT(SAGE)
+-----------
+	  6
+
+SQL> select sid,sname,pno from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno;
+
+       SID SNAME		       PNO
+---------- -------------------- ----------
+       101 KIRAN			 2
+       105 JOHN 			 2
+       105 JOHN 			 4
+       109 NYMERIA			 1
+       109 NYMERIA			 2
+       109 NYMERIA			 3
+       109 NYMERIA			 4
+       114 PABLO			 1
+       118 KOMAL			 1
+       118 KOMAL			 2
+
+10 rows selected.
+
+SQL> select sid,sname, (select count(pno) from student_project_170) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno;
+
+       SID SNAME		(SELECTCOUNT(PNO)FROMSTUDENT_PROJECT_170)
+---------- -------------------- -----------------------------------------
+       101 KIRAN						       10
+       105 JOHN 						       10
+       105 JOHN 						       10
+       109 NYMERIA						       10
+       109 NYMERIA						       10
+       109 NYMERIA						       10
+       109 NYMERIA						       10
+       114 PABLO						       10
+       118 KOMAL						       10
+       118 KOMAL						       10
+
+10 rows selected.
+
+SQL> select sid,sname, (select count(pno) from student_project_170 group by pno) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno;
+select sid,sname, (select count(pno) from student_project_170 group by pno) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno
+                   *
+ERROR at line 1:
+ORA-01427: single-row subquery returns more than one row
+
+
+SQL> select sid,sname, (select count(pno) from student_project_170) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno  group by pno;
+select sid,sname, (select count(pno) from student_project_170) from student_170 inner join student_project_170 on student_170.sid = student_project_170.sno  group by pno
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> desc DEPT_170
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DUM					   NOT NULL NUMBER(38)
+ DNAME						    CHAR(5)
+ DLOC						    VARCHAR2(10)
+ YEAR					   NOT NULL NUMBER(38)
+
+SQL> select dum,dname from department_170 inner join on student_170 where student_170.dno = department_170.dum ;
+select dum,dname from department_170 inner join on student_170 where student_170.dno = department_170.dum
+                                                *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> select dum,dname from department_170 inner join student_170 on student_170.dno = department_170.dum ;
+select dum,dname from department_170 inner join student_170 on student_170.dno = department_170.dum
+                      *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select dum,dname from dept_170 inner join student_170 on student_170.dno = department_170.dum ;
+select dum,dname from dept_170 inner join student_170 on student_170.dno = department_170.dum
+                                                                           *
+ERROR at line 1:
+ORA-00904: "DEPARTMENT_170"."DUM": invalid identifier
+
+
+SQL> select dum,dname from dept_170 inner join student_170 on student_170.dno = dept_170.dum ;
+
+       DUM DNAME
+---------- -----
+	30 MATH
+	20 EEE
+	10 CSE
+	20 EEE
+	20 EEE
+	30 MATH
+
+6 rows selected.
+
+SQL> select dum,dname from dept_170 inner join student_170 on student_170.dno = dept_170.dum group by dno,dname having count(*) > 3  ;
+select dum,dname from dept_170 inner join student_170 on student_170.dno = dept_170.dum group by dno,dname having count(*) > 3
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> select dum,dname from dept_170,student_170 where student_170.dno = dept_170.dum group by dno,dname having count(*) > 3  ;
+select dum,dname from dept_170,student_170 where student_170.dno = dept_170.dum group by dno,dname having count(*) > 3
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> select dum,dname from dept_170,student_170 where dept_170.dum = student_170.dno group by dno,dname having count(*) > 3  ;
+select dum,dname from dept_170,student_170 where dept_170.dum = student_170.dno group by dno,dname having count(*) > 3
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> select dum,dname from dept_170,student_170 where dept_170.dum = student_170.dno group by dum,dname having count(*) > 3  ;
+
+no rows selected
+
+SQL> select dum,dname from dept_170,student_170 where dept_170.dum = student_170.dno group by dum,dname having count(*) > 1 ; 
+
+       DUM DNAME
+---------- -----
+	30 MATH
+	20 EEE
+
+SQL> select dum,dname from dept_170 where dum in ( select dno from student_170 group by dno having count(*) > 1); 
+
+       DUM DNAME
+---------- -----
+	30 MATH
+	20 EEE
+
+SQL> commit                       
+  2  ;
+
+Commit complete.
+
+SQL> select sid,sname from student_170 where ((select pno from student_project_170 where sid=sno) contains(select pnum from project));
+select sid,sname from student_170 where ((select pno from student_project_170 where sid=sno) contains(select pnum from project))
+                                                                                             *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> select sid,sname from student_170 where ((select pno from student_project_170 where student_170.sid=project.sno) contains (select pnum from project)); 
+select sid,sname from student_170 where ((select pno from student_project_170 where student_170.sid=project.sno) contains (select pnum from project))
+                                                                                                                 *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL>  
